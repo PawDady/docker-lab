@@ -21,10 +21,6 @@ apply plugin: 'com.bmuschko.docker-remote-api'
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 
-docker {
-    url = 'unix:///var/run/docker.sock'
-}
-
 task createDockerFile(type: Dockerfile) {
     destFile = project.file("build/Dockerfile")
     from "java:8u111-jdk"
